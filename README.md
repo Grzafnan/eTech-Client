@@ -1,3 +1,3 @@
 ## server
 
-server link :
+server link : https://github.com/Grzafnan/e-Tech-Server
