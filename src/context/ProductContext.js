@@ -7,7 +7,7 @@ const PRODUCT_CONTEXT = createContext();
 
 const ProductProvider = ({ children }) => {
   const [state, disPatch] = useReducer(productReducer, initialState)
-
+  console.log(state);
   useEffect(() => {
     disPatch({ type: actionTypes.FETCHING_START })
     fetch(`${process.env.REACT_APP_API_URL}/products`)

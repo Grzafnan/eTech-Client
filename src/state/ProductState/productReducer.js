@@ -5,6 +5,7 @@ export const initialState = {
   loading: false,
   products: [],
   error: false,
+  cart: []
 };
 
 
@@ -22,6 +23,16 @@ export const productReducer = (state, action) => {
         loading: false,
         products: action.payload,
         error: false
+      }
+    case actionTypes.ADD_TO_CART:
+      return {
+        ...state,
+        cart: [...state.cart, action.payload]
+      }
+    case actionTypes.DELETE_TO_CART:
+      return {
+        ...state,
+        cart: [...state.cart.filter((current) => current._id !== action.payload)]
       }
     case actionTypes.FETCHING_ERROR:
       return {
